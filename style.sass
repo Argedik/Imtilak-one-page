@@ -1,0 +1,645 @@
+$breakpoint-md: 768px
+$font-size-md: 17px
+$margin-bottom: 80px
+
+*
+	box-sizing: border-box
+	font-family: 'Tajawal', sans-serif
+	margin: 0
+	padding: 0
+
+.angled-section
+	background: url(./assets/img/header-bg.svg) no-repeat center center
+	background-size: cover
+	min-height: 600px
+	margin-bottom: $margin-bottom
+
+header 
+	min-height: 110px
+	background: linear-gradient(to top, #06223900, #122E46 )
+	transition: background-color 1.3s ease
+	visibility: visible
+	animation-name: fadeIn
+
+	@keyframes fadeIn
+		0%
+			opacity: 0
+		100%
+			opacity: 1
+
+.header-scroll
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 999
+	background: linear-gradient(to top, #062239, #122E46 )
+	animation-fill-mode: forwards
+	animation-name: fadeInScroll
+	opacity: 0
+
+	@keyframes fadeInScroll
+		0%
+			opacity: 0
+		100%
+			opacity: 1
+
+		
+.header-left img
+	max-width: 202px
+
+.header-middle
+	display: flex
+	align-items: center
+
+	& .navigation
+		margin: 0 10px
+
+		& li 
+			display: inline
+			margin-right: 75px
+
+			& a
+				text-decoration: none
+				position: relative
+				color: #fff
+
+				&::after
+					content: ""
+					position: absolute
+					bottom: -6px
+					left: 0
+					width: 100%
+					height: 2px
+					background-color: #fff
+					transform: scaleX(0)
+					transition: transform 0.3s ease
+
+				&:hover::after
+					transform: scaleX(1)
+
+				&:hover
+					cursor: pointer
+					color: inherit
+	
+
+.header-right
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+	& .call-text 
+		margin-right: 4rem
+		padding-top: 5px
+
+	& img
+		width: 32px
+		height: 32px
+
+.top-navbar-desktop
+	padding-top: 30px
+	margin: 0 80px
+	height: 74px
+	color: #fff
+	display: flex
+	justify-content: space-between
+	align-items: center
+	
+	@media (max-width: $breakpoint-md) 
+		display: none
+
+.top-navbar-mobile
+	margin: 0 30px
+	height: 74px
+	color: #fff
+	display: flex
+	justify-content: space-between
+	align-items: center
+	
+	@media (min-width: $breakpoint-md) 
+		display: none
+
+	& .header-left img
+		max-width: 97px
+
+	& .hamburger
+		position: relative
+		display: flex
+		justify-content: center
+		align-items: center
+		cursor: pointer
+		appearance: none
+		background: none
+		outline: none
+		border: none
+		border-radius: 7px
+		background-color: #fff
+		text-align: center
+		display: none
+
+		@media (max-width: $breakpoint-md) 
+			display: inline-block
+		
+		&:active
+			background-color: #000
+
+		& img
+			height: 35px
+			width: 35px
+			padding: 5px 9px
+
+
+.marbled
+	display: flex
+	align-items: center
+
+	@media (max-width: $breakpoint-md) 
+		flex-direction: column-reverse
+
+	&-image
+		min-width: 207px
+		max-width: 50%
+
+	& .marbled-content
+		max-width: 50%
+		@media (max-width: $breakpoint-md) 
+			margin-bottom: 20px
+
+		&__title
+			color:#F1D9BF
+			font-weight: bold
+			margin: 0
+			font-size: 50px
+
+			@media (max-width: $breakpoint-md) 
+				flex-direction: column-reverse
+				align-content: space-between
+				font-size: 24px
+
+		&__info
+			font-weight: 300
+			color: #fff
+			font-size: $font-size-md
+
+			@media (max-width: $breakpoint-md) 
+				font-size: 11px
+		
+		& .marbled-details
+			display: flex
+			align-items: center
+			
+			&__button
+				margin-right: 40px
+				color: #0A4473
+				background-color: #fff
+				border-radius: 12px
+				padding: 10px 20px 0
+
+				&-text
+					line-height: 0.9
+					font-size: 31px
+					font-weight: bold
+
+			&__icons
+				margin-right: 15px
+				display: block
+
+				@media (max-width: $breakpoint-md) 
+					display: none
+
+
+.marbled-text
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	margin-bottom: $margin-bottom
+
+	&__title
+		font-size: 39px
+		font-weight: bold
+		color: #0B4E86
+		font-family: 'Roboto', sans-serif
+
+	&__info
+		font-size: $font-size-md
+		font-weight: 300
+		color: #646464
+		line-height: 1.2
+		font-family: 'Roboto', sans-serif
+
+
+.arrow-down
+	width: 100%
+	text-align: center
+	margin-top: 20px
+	display: block
+
+	@media (max-width: $breakpoint-md) 
+		display: none
+
+	&__icon
+		height: 58px
+		width: 58px
+
+
+.channel
+	margin-bottom: $margin-bottom
+	padding: 0 240px !important
+
+	@media (max-width: $breakpoint-md) 
+		padding: 0 15px !important
+
+	&-row
+		.video
+			padding: 5px
+
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+			padding: 5px
+
+
+.payment-options
+	margin-bottom: $margin-bottom
+
+	&__text
+		text-align: center
+
+		&-title
+			font-size: 39px
+			font-weight: bold
+			color: #0B4E86
+
+		&-info
+			font-size: $font-size-md
+			font-weight: 300
+			color: #646464
+			line-height: 1.2
+
+	&__table
+		margin: 0 auto
+		margin-top: 40px
+		width: 100%
+		max-width: 541px
+
+		& tbody tr
+			margin-bottom: 5px
+			
+		& td, th
+			padding: 8px
+
+		& tr:nth-child(even)
+			background-color: #f2f2f2
+
+		& th
+			border: none !important
+			padding-top: 12px
+			padding-bottom: 12px
+			text-align: left
+			background-color: #0B4E86
+			color: white
+
+		&-title
+			display: flex
+			justify-content: center
+
+			& .col
+				flex-basis: 25%
+				font-size: 12px
+				font-weight: bold
+				color: #fff
+				padding: 6px 25px
+				display: flex
+				align-items: center
+				justify-content: center
+				text-align: center
+				background: linear-gradient(#2E6DA1, #1A4A74)
+				border: 1px solid #092843
+
+			& .col-first
+				border-top-left-radius: 12px
+				border-left: none
+				border-bottom: none
+
+			& .col-last
+				border-top-right-radius: 12px
+				border-right: none
+
+		&-info
+			justify-content: center
+			display: flex
+			flex-direction: column
+			
+			& .row
+				font-size: $font-size-md
+				font-weight: 300
+				display: flex
+				align-items: center
+				justify-content: center
+				text-align: center
+				margin: 0 0 10px
+				box-shadow: 0px 2px 24px #11111126
+
+				& div
+					flex-basis: 25%
+					text-align: center
+					padding: 12px 0
+					border: 1px solid #fff
+					
+				& .row-first
+					border-bottom-left-radius: 12px
+					
+				& .row-last
+					font-weight: normal
+					font-weight: bold
+					border-bottom-right-radius: 12px
+
+
+.logos
+	margin-bottom: $margin-bottom
+
+	& .payment-logos
+		flex-wrap: wrap
+		display: flex
+		justify-content: space-between
+		align-items: start
+		padding: 0 50px
+
+		& .payment-logo
+			display: flex
+			flex-direction: column
+			flex-basis: 20%
+			align-items: center
+
+			&__icon
+				height: 123px
+				width: 123px
+				margin: 20px 0
+
+			&__text
+				text-align: center
+
+				&-title
+					font-weight: bold
+					color: #236194
+					font-family: 'Roboto', sans-serif
+				
+				&-info
+					font-weight: 300
+					color: #000
+					line-height: 1.2
+					font-family: 'Roboto', sans-serif
+
+
+.services
+	margin-bottom: $margin-bottom
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-wrap: wrap
+
+	&__img
+		flex-basis: 50%
+		min-width: 300px
+
+	&__text
+		flex-basis: 50%
+		
+		&-title
+			font-size: 39px
+			font-weight: bold
+			color: #0B4E86
+
+		&-info__row
+			display: flex
+			justify-content: start
+			align-items: start
+
+			& .info-img
+				margin-top: 4px
+
+			& .info-text
+				margin: 5px 20px
+
+				&__title
+					font-weight: bold
+					font-size: 16px
+
+				&__info
+					font-weight: 300
+					font-family: 'Roboto', sans-serif
+					line-height: 0.9
+					font-size: 14px
+
+
+.location
+	margin-bottom: $margin-bottom
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+	& .location-area
+		flex-basis: 50%
+		padding-right: 100px
+
+		&__text
+			padding: 0 20px
+			margin: 20px
+			
+			&-title
+				font-size: 32px
+				font-weight: bold
+				color: #0B4E86
+				line-height: 1.2
+			
+			&-info
+				font-size: 12px
+				font-weight: 300
+				color: #656565
+				line-height: 0.9
+				font-family: 'Roboto', sans-serif
+
+		&__logos
+			display: flex
+			justify-content: space-between
+			flex-wrap: wrap
+			row-gap: 22px
+
+			& .logo-part
+				display: flex
+				flex-direction: column
+				align-items: center
+				flex-basis: 33%
+
+				&__img
+					padding: 0 20px
+					height: 45px
+
+				&__info
+					font-family: 'Roboto', sans-serif
+					text-align: center
+					font-size: 13px
+					padding-top: 13px
+
+	& .location-img
+		flex-basis: 50%
+
+		& img
+			width: 100%
+			height: 100%
+			object-fit: cover
+
+
+.welcome-content
+	background-color: #ECECEC
+	display: flex
+	justify-content: space-around
+	padding: 100px 0
+
+	& .welcome-info
+		flex-basis: 40%
+
+		& input
+			line-height: 3
+			color: #fff
+			background-color: #0B4E86
+			border: none
+			border-radius: 10px
+			width: 120px
+			height: 44px
+			font-weight: bold
+			font-size: 16px
+
+		& input:active
+			background-color: #BBBBBB
+	
+	& .welcome-form
+		flex-basis: 40%
+		display: flex
+		justify-content: start
+		align-items: center
+		
+		&__title
+			font-family: 'Roboto', sans-serif
+			padding-bottom: 15px
+
+		&__wrapper
+			display: flex
+			flex-direction: column
+			justify-content: start
+			width: 100%
+		
+		&__row
+			display: flex
+			width: 100%
+			column-gap: 1rem
+
+		& .input-wrapper
+			position: relative
+			width: 100%
+			
+			& input
+				height: 48px
+				width: 100%
+				border: none
+
+			& input[type='submit']
+				line-height: 3
+				color: #fff
+				background-color: #0B4E86
+				border: none
+				border-radius: 10px
+				font-size: 15px
+
+			& label
+				position: absolute
+				inset: 15px 0 10px 7px
+				font-size: 15px
+				color: #000
+
+
+.footer-content
+	position: relative
+	background: linear-gradient(to right, #093F6D, #122E46 )
+
+	& .footer-img
+		position: absolute
+		left: 0
+		z-index: 0
+		bottom: 0
+		max-width: calc(100vh - 85vh)
+
+		& img
+			width: 100%
+			height: 100%
+	
+	.footer-wrapper
+		position: relative
+		display: flex
+		justify-content: space-around
+		align-items: start
+		padding: 60px 0 67px 0
+
+		@media (max-width: $breakpoint-md) 
+			flex-direction: column
+
+		.start
+			position: relative
+			z-index: 10
+			display: flex
+			flex-direction: column
+			align-items: start
+			flex-basis: 33%
+			color: #fff
+			margin-left: 140px
+
+			& img
+				max-width: 202px
+				padding-bottom: 20px
+
+		.content
+			display: flex
+			align-items: start
+			flex-basis: 33%	
+			justify-content: space-between
+
+			&-list li
+				list-style-type: none
+				margin-bottom: 1.5rem
+				color: #fff
+
+			&-list h4
+				color: #F6EACA
+				margin-bottom: 1.5rem
+
+		.end
+			display: flex
+			align-items: center
+			flex-direction: column
+			justify-content: center
+			flex-wrap: wrap
+			flex-basis: 33%
+			margin-right: 140px
+
+			& .follow-us
+				font-size: 18px
+				font-weight: bold
+				color: #F6EACA
+				margin-bottom: 1.5rem
+
+				&__icons
+					cursor: pointer
+					display: flex
+					align-items: center
+					gap: 1rem
+
+
+.signature
+	text-align: center
+	font-size: 16px
+	background-color: #134E84
+	color: #fff
+	padding: 15px 0
+
